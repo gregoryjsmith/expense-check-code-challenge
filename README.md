@@ -8,7 +8,15 @@ You've been working on a number of projects withing a company across a few teams
 * It should allow the user to select a color.
 * It should show the value of the color always in RGB representation.
 
-We have provided some endpoints that will deliver colors of various kinds, please find their descriptions in appendix A. In delivering your solution, please consider us as one of the teams you are making the toolkit for. Also keep in mind that this toolkit will need to be worked on and maintained by multiple other teams in the future.### Stage 1We know for sure that we will be using RGB and HSL color spaces, and that users of the toolkit will want to be able to convert HSL to RGB in their code. Please implement something to facilitate this conversion.Note that while there are numerous third-party libraries that can do this, we'd like you to implement the conversion yourself.### Stage 2Now we need to be able to fetch a list of colors from the server and render them in the swatch. Please implement the color swatch widget to render colors to the user as outlined in the description.Please keep in mind that we are interested in extensibility (stage 3 focusses on this).
+We have provided some endpoints that will deliver colors of various kinds, please find their descriptions in appendix A. In delivering your solution, please consider us as one of the teams you are making the toolkit for. Also keep in mind that this toolkit will need to be worked on and maintained by multiple other teams in the future.
+
+### Stage 1
+
+We know for sure that we will be using RGB and HSL color spaces, and that users of the toolkit will want to be able to convert HSL to RGB in their code. Please implement something to facilitate this conversion. Note that while there are numerous third-party libraries that can do this, we'd like you to implement the conversion yourself.
+
+### Stage 2
+
+Now we need to be able to fetch a list of colors from the server and render them in the swatch. Please implement the color swatch widget to render colors to the user as outlined in the description.Please keep in mind that we are interested in extensibility (stage 3 focusses on this).
 
 ### Stage 3
 

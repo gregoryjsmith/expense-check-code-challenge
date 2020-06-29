@@ -1,39 +1,45 @@
 import React from 'react'
 
 const Swatch = () => {
-  return <div>I am a swatch</div>
+  return (
+    <div className='Swatch'>
+      <div className='Swatch-swatches'>Swatches will go here</div>
+      <div className='Swatch-selected'>Selected value goes here</div>
+      <button className='Swatch-button'>Refresh</button>
+    </div>
+  )
 }
 
-type RgbColor = {
+export type RgbColor = {
   red: number // [0, 255]
   green: number // [0, 255]
   blue: number // [0, 255]
 }
 
-type HslColor = {
+export type HslColor = {
   hue: number // [0, 360] degrees
   saturation: number // [0, 100] percentage
   lightness: number // [0, 100] percentage
 }
 
-type BrgbColor = {
+export type BrgbColor = {
   red: number // [0, 10000]
   green: number // [0, 10000]
   blue: number // [0, 10000]
 }
 
-type ColorListItem = {
+export type ColorListItem = {
   kind: string // One of "rgb", or "hsl"
   components: RgbColor | HslColor
 }
 
-type ColorList = ColorListItem[]
+export type ColorList = ColorListItem[]
 
-type ExtendedColorListItem = {
+export type ExtendedColorListItem = {
   kind: string // One of "rgb", "hsl", or "brgb"
   components: RgbColor | HslColor | BrgbColor
 }
 
-type ExtendedColorList = ExtendedColorListItem[]
+export type ExtendedColorList = ExtendedColorListItem[]
 
 export { Swatch }
