@@ -2,7 +2,7 @@
 
 ## Description
 
-You've been working on a number of projects withing a company across a few teams, and you've found that the teams have a shared requirement for easily rendering "color swatches" using different color spaces.We'd like to produce a toolkit that could be easily used, and also easily extended, by all the teams in the company. The toolkit should provide a React widget that can render an array of five colors, each of which could be represented in a different color space.Some features we'd like of the color swatch widget: 
+You've been working on a number of projects withing a company across a few teams, and you've found that the teams have a shared requirement for easily rendering "color swatches" using different color spaces. We'd like to produce a toolkit that could be easily used, and also easily extended, by all the teams in the company. The toolkit should provide a React widget that can render an array of five colors, each of which could be represented in a different color space. Some features we'd like of the color swatch widget: 
 
 * It should have a button that can be clicked to refresh the colors from the server.
 * It should allow the user to select a color.
@@ -29,27 +29,43 @@ type RgbColor {
   red: number,    // [0, 255]
   green: number,  // [0, 255]
   blue: number    // [0, 255]
-}type HslColor {
+}
+
+type HslColor {
   hue: number,         // [0, 360] degrees
   saturation: number,  // [0, 100] percentage
   lightness: number    // [0, 100] percentage
-}type BrgbColor {
+}
+
+type BrgbColor {
   red: number,    // [0, 10000]
   green: number,  // [0, 10000]
   blue: number    // [0, 10000]
-}type ColorListItem {
+}
+
+type ColorListItem {
   kind: string,  // One of "rgb", or "hsl"
   components: RgbColor | HslColor
-}type ColorList ColorListItem[]type ExtendedColorListItem {
+}
+
+type ColorList ColorListItem[]
+
+type ExtendedColorListItem {
   kind: string,  // One of "rgb", "hsl", or "brgb"
   components: RgbColor | HslColor | BrgbColor
-}type ExtendedColorList ExtendedColorListItem[]
+}
+
+type ExtendedColorList ExtendedColorListItem[]
 ```
 
 ### Get list of random colors for stage 1
 
 Path: `/rest/colors/list`
 Method: `GET`
-Response: `ColorList`### Get list of random extended colors for stage 2Path: `/rest/colors/list-extended`
+Response: `ColorList`
+
+### Get list of random extended colors for stage 2
+
+Path: `/rest/colors/list-extended`
 Method: `GET`
 Response: `ExtendedColorList`
