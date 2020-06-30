@@ -11,20 +11,20 @@ export type HslColor = {
 }
 
 export type BrgbColor = {
-  red: number // [0, 10000]
-  green: number // [0, 10000]
-  blue: number // [0, 10000]
+  bred: number // [0, 10000]
+  bgreen: number // [0, 10000]
+  bblue: number // [0, 10000]
 }
 
 export type ColorListItem = {
-  kind: 'rgb' | 'hsl' // One of "rgb", or "hsl"
+  kind: string // One of "rgb", or "hsl"
   components: RgbColor | HslColor
 }
 
 export type ColorList = ColorListItem[]
 
 export type ExtendedColorListItem = {
-  kind: 'rgb' | 'hsl' | 'brgb' // One of "rgb", "hsl", or "brgb"
+  kind: string // One of "rgb", "hsl", or "brgb"
   components: RgbColor | HslColor | BrgbColor
 }
 

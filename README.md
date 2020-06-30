@@ -1,3 +1,51 @@
+# Expense Check Code Challenge
+
+## Overview
+
+This app was built using `create-react-app` with the TypeScript template.
+
+Most of the requirements for the challenge are met using the files in the `src/components` and `src/utilties` folders.
+
+I've used the base `App` component to render two different versions of the `Swatch` component.
+
+The first render is the out-of-box version, and the second is the extended version.
+
+If I were to publish this as a package for consumption I would remove the `App` component and much of the boilerplate `create-react-app` stuff such as server workers etc.
+
+I had thought about using BEM for styling, however for something this small I just went with the `create-react-app` convention, and decided against using SCSS as I felt it was also overkill.
+
+I have not spent any time on cross browser testing or on responsive design. It should work pretty well though on most modern browsers.
+
+The original requirements are listed below.
+
+## Running the code
+
+All of these commands need to be run from the root of the project.
+
+Install dependencies:
+
+```
+yarn
+```
+
+To start the dev server and file watchers Run the following from the root of the project:
+
+```
+yarn start
+```
+
+To build a static version (you will still likely need to create a server to run this locally):
+
+```
+yarn build
+```
+
+To run unit tests:
+
+```
+yarn test
+```
+
 # Colors Challenge
 
 ## Description
