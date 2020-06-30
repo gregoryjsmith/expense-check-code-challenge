@@ -4,9 +4,11 @@
 
 This app was built using `create-react-app` with the TypeScript template.
 
-Most of the requirements for the challenge are met using the files in the `src/components` and `src/utilties` folders.
+Code style is prettier with a few opinionated options provided.
 
-I've used the base `App` component to render two different versions of the `Swatch` component.
+Most of the requirements for the challenge were using the files in the `src/components` and `src/utilties` folders.
+
+I've used the base `App` component simply to render two different versions of the `Swatch` component.
 
 The first render is the out-of-box version, and the second is the extended version.
 
@@ -15,8 +17,6 @@ If I were to publish this as a package for consumption I would remove the `App` 
 I had thought about using BEM for styling, however for something this small I just went with the `create-react-app` convention, and decided against using SCSS as I felt it was also overkill.
 
 I have not spent any time on cross browser testing or on responsive design. It should work pretty well though on most modern browsers.
-
-The original requirements are listed below.
 
 ## Running the code
 
