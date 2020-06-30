@@ -1,0 +1,27 @@
+.Swatch {
+
+}
+
+.Swatch-swatches {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.Swatch-color {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.Swatch-selected {
+  margin-bottom: 1rem;
+}
+
+.Swatch-button {
+  background: darkgray;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}

@@ -1,4 +1,4 @@
-import { HslColor, RgbColor } from '../components/Swatch'
+import { HslColor, RgbColor } from '../types'
 
 /**
  * Convert HSL to RGB

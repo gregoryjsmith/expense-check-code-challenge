@@ -16,13 +16,15 @@ We know for sure that we will be using RGB and HSL color spaces, and that users 
 
 ### Stage 2
 
-Now we need to be able to fetch a list of colors from the server and render them in the swatch. Please implement the color swatch widget to render colors to the user as outlined in the description.Please keep in mind that we are interested in extensibility (stage 3 focusses on this).
+Now we need to be able to fetch a list of colors from the server and render them in the swatch. Please implement the color swatch widget to render colors to the user as outlined in the description. Please keep in mind that we are interested in extensibility (stage 3 focusses on this).
 
 ### Stage 3
 
-After we delivered the solution to stage 2 to the teams, we found that one of the teams uses a strange representation of the RGB color space, BRGB. BRGB stores the red, green, and blue components as values between 0 and 10000 (inclusive). The team has asked about how they can easily extend your implementation to include the BRGB color space.Imagine you're a member of the team using BRGB and implement the extension.
+After we delivered the solution to stage 2 to the teams, we found that one of the teams uses a strange representation of the RGB color space, BRGB. BRGB stores the red, green, and blue components as values between 0 and 10000 (inclusive). The team has asked about how they can easily extend your implementation to include the BRGB color space. Imagine you're a member of the team using BRGB and implement the extension.
 
-## Notes * Usage of external libraries is entirely up to you,
+## Notes 
+
+* Usage of external libraries is entirely up to you,
 
 # Appendices
 
@@ -66,13 +68,13 @@ type ExtendedColorListItem {
 type ExtendedColorList ExtendedColorListItem[]
 ```
 
-### Get list of random colors for stage 1
+### Get list of random colors for stage 2
 
 Path: `/rest/colors/list`
 Method: `GET`
 Response: `ColorList`
 
-### Get list of random extended colors for stage 2
+### Get list of random extended colors for stage 3
 
 Path: `/rest/colors/list-extended`
 Method: `GET`

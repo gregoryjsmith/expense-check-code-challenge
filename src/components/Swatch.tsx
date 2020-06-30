@@ -1,45 +1,52 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { ColorList, RgbColor } from '../types'
+import { colorListItemToRgb } from '../utilities/colorListItemToRgb'
+import './Swatch.css'
 
-const Swatch = () => {
+const ENDPOINT = 'https://challenge.structrs.com'
+
+const Swatch: React.FC = () => {
+  const [colors, setColors] = useState<ColorList>([])
+  const [color, setColor] = useState<RgbColor>()
+
+  const requestColors = async () => {
+    const response = await axios.get<ColorList>(`${ENDPOINT}/rest/colors/list`)
+    setColors(response.data)
+    setColor(undefined)
+  }
+
+  useEffect(() => {
+    requestColors()
+  }, [])
+
+  const handleSwatchClick = (color: RgbColor) => (e: React.MouseEvent) => {
+    setColor(color)
+  }
+
   return (
     <div className='Swatch'>
-      <div className='Swatch-swatches'>Swatches will go here</div>
-      <div className='Swatch-selected'>Selected value goes here</div>
-      <button className='Swatch-button'>Refresh</button>
+      <div className='Swatch-swatches'>
+        {colors.map(colorListItemToRgb).map((color) => (
+          <div
+            className='Swatch-color'
+            style={{
+              backgroundColor: `rgb(${color.red}, ${color.green}, ${color.blue})`,
+            }}
+            onClick={handleSwatchClick(color)}
+          />
+        ))}
+      </div>
+      <div className='Swatch-selected'>
+        {color
+          ? `rgb(${color?.red}, ${color?.green}, ${color?.blue})`
+          : 'Click a color to see its RGB value'}
+      </div>
+      <button className='Swatch-button' onClick={requestColors}>
+        Refresh
+      </button>
     </div>
   )
 }
-
-export type RgbColor = {
-  red: number // [0, 255]
-  green: number // [0, 255]
-  blue: number // [0, 255]
-}
-
-export type HslColor = {
-  hue: number // [0, 360] degrees
-  saturation: number // [0, 100] percentage
-  lightness: number // [0, 100] percentage
-}
-
-export type BrgbColor = {
-  red: number // [0, 10000]
-  green: number // [0, 10000]
-  blue: number // [0, 10000]
-}
-
-export type ColorListItem = {
-  kind: string // One of "rgb", or "hsl"
-  components: RgbColor | HslColor
-}
-
-export type ColorList = ColorListItem[]
-
-export type ExtendedColorListItem = {
-  kind: string // One of "rgb", "hsl", or "brgb"
-  components: RgbColor | HslColor | BrgbColor
-}
-
-export type ExtendedColorList = ExtendedColorListItem[]
 
 export { Swatch }
